@@ -17,8 +17,8 @@ export default class Housing {
           <div class="card">
             <img class="card-img-top" src="${this.image}" alt="" />
             <div class="card-body">
-              <h5 class="card-title">${this.rooms} - ${this.pricePerMonth}</h5>
-              <h6 class="car-subtitle mb-2 text-mute">${this.availability}</h6>
+              <h5 class="card-title mb-1">${this.rooms} - $${this.pricePerMonth}/mo</h5>
+              <h6 class="car-subtitle mb-2 text-mute">Available: ${this.availability}</h6>
               <p class="card-text">
                ${this.description}
               </p>              
