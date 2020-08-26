@@ -17,10 +17,15 @@ export default class HousingController {
     event.preventDefault();
     let form = event.target;
     let newHouse = {
+      // @ts-ignore
       rooms: form.rooms.value,
+      // @ts-ignore
       pricePerMonth: form.pricePerMonth.value,
+      // @ts-ignore
       availability: form.availability.value,
+      // @ts-ignore
       description: form.description.value,
+      // @ts-ignore
       image: form.image.value,
     };
 
