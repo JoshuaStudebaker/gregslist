@@ -95,7 +95,10 @@
       <div class="row" id="cars"></div>
       <div class="row my-3">
         <div class="col">
-          <form onsubmit="app.housingController.addHouse()" class="form-inline">
+          <form
+            onsubmit="app.housingController.addHousing()"
+            class="form-inline"
+          >
             <div class="form-group p-1">
               <label class="mr-1" for="rooms">Rooms</label>
               <input
@@ -109,7 +112,7 @@
             <div class="form-group p-1">
               <label class="mr-1" for="pricePerMonth">Price per Month</label>
               <input
-                type="text"
+                type="number"
                 name="pricePerMonth"
                 id="pricePerMonth"
                 class="form-control"
@@ -119,7 +122,7 @@
             <div class="form-group p-1">
               <label class="mr-1" for="availability">When Available</label>
               <input
-                type="number"
+                type="date"
                 name="availability"
                 id="availability"
                 class="form-control"
@@ -129,7 +132,7 @@
             <div class="form-group p-1">
               <label class="mr-1" for="image">Image</label>
               <input
-                type="number"
+                type="url"
                 name="image"
                 id="image"
                 class="form-control"

@@ -2,9 +2,9 @@ import Housing from "../Models/Housing.js";
 import STORE from "../store.js";
 
 class HousingService {
-  addHouse() {
-    let newApt = new Housing();
-    STORE.State.houses.push();
+  addHousing(newHouse) {
+    let apt = new Housing(newHouse);
+    STORE.State.houses.push(apt);
   }
 }
 const SERVICE = new HousingService();

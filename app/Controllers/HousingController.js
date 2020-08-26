@@ -1,4 +1,4 @@
-// import HousingService from "../Services/HousingService.js";
+import housingService from "../Services/HousingService.js";
 import STORE from "../store.js";
 
 function _drawHousing() {
@@ -10,6 +10,21 @@ function _drawHousing() {
 
 export default class HousingController {
   constructor() {
+    _drawHousing();
+  }
+
+  addHousing() {
+    event.preventDefault();
+    let form = event.target;
+    let newHouse = {
+      rooms: form.rooms.value,
+      pricePerMonth: form.pricePerMonth.value,
+      availability: form.availability.value,
+      description: form.description.value,
+      image: form.image.value,
+    };
+
+    housingService.addHousing(newHouse);
     _drawHousing();
   }
 }
