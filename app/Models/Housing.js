@@ -1,14 +1,6 @@
 import { generateId } from "../utils.js";
 
 export default class Housing {
-  /**
-   *
-   * @param {*} image
-   * @param {*} rooms
-   * @param {*} availability
-   * @param {Number} pricePerMonth
-   * @param {String} description
-   */
   constructor({ rooms, availability, image, pricePerMonth, description }) {
     this.rooms = rooms;
     this.availability = availability;
