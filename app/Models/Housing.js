@@ -5,11 +5,11 @@ export default class Housing {
    *
    * @param {*} image
    * @param {*} rooms
-   * @param {Date} availability
+   * @param {*} availability
    * @param {Number} pricePerMonth
    * @param {String} description
    */
-  constructor(rooms, availability, image, pricePerMonth, description) {
+  constructor({ rooms, availability, image, pricePerMonth, description }) {
     this.rooms = rooms;
     this.availability = availability;
     this.image = image;

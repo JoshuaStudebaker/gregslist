@@ -1,4 +1,5 @@
 import Car from "./Models/Car.js";
+import Housing from "./Models/Housing.js";
 console.log(1);
 
 let _state = {
@@ -32,7 +33,18 @@ let _state = {
       description: "Are those teeth marks?",
     }),
   ],
-  houses: [],
+
+  /** @type {Housing[]} */
+  houses: [
+    new Housing({
+      rooms: "Studio",
+      availability: "Now",
+      image:
+        "https://cdngeneral.rentcafe.com/dmslivecafe/3/567898/33%20King%20Street%20Toronto-15.jpg?&width=580&height=385&mode=pad&bgcolor=333333&scale=both",
+      pricePerMonth: 850,
+      description: "Close to Downtown",
+    }),
+  ],
 };
 
 class Store {
