@@ -51,4 +51,10 @@ export default class CarsController {
     carsService.bid(id);
     _drawCars();
   }
+  displayCars() {
+    let element = document.getElementById("car-display");
+    element.classList.remove("d-none");
+    let elem2 = document.getElementById("housing-display");
+    elem2.classList.add("d-none");
+  }
 }

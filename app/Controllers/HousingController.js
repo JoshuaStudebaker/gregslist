@@ -32,4 +32,10 @@ export default class HousingController {
     housingService.addHousing(newHouse);
     _drawHousing();
   }
+  displayHousing() {
+    let element = document.getElementById("housing-display");
+    element.classList.remove("d-none");
+    let elem2 = document.getElementById("car-display");
+    elem2.classList.add("d-none");
+  }
 }

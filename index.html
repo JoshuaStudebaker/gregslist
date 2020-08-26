@@ -37,7 +37,7 @@
                     type="button"
                     class="dropdown-item pt-0 pb-0 pl-0 pr-1"
                     href=""
-                    onclick="displayCars()"
+                    onclick="app.carsController.displayCars()"
                   >
                     Cars
                   </button>
@@ -49,7 +49,7 @@
                     type="button"
                     class="dropdown-item pt-0 pb-0 pl-0 pr-1"
                     href=""
-                    onclick="displayHousing()"
+                    onclick="app.housingController.displayHousing()"
                   >
                     Housing
                   </button>
@@ -61,142 +61,146 @@
       </div>
     </header>
     <main class="container" id="main">
-      <div class="row my-3">
-        <div class="col">
-          <form onsubmit="app.carsController.createCar()" class="form-inline">
-            <div class="form-group p-1">
-              <label class="mr-1" for="make">Make</label>
-              <input
-                type="text"
-                name="make"
-                id="make"
-                class="form-control"
-                placeholder="Make..."
-              />
-            </div>
-            <div class="form-group p-1">
-              <label class="mr-1" for="model">Model</label>
-              <input
-                type="text"
-                name="model"
-                id="model"
-                class="form-control"
-                placeholder="Model..."
-              />
-            </div>
-            <div class="form-group p-1">
-              <label class="mr-1" for="year">Year</label>
-              <input
-                type="number"
-                name="year"
-                id="year"
-                class="form-control"
-                placeholder="Year..."
-                min="1900"
-                max="2021"
-              />
-            </div>
-            <div class="form-group p-1">
-              <label class="mr-1" for="price">Price</label>
-              <input
-                type="number"
-                name="price"
-                id="price"
-                class="form-control"
-                placeholder="Price..."
-              />
-            </div>
-            <div class="form-group p-1">
-              <label class="mr-1" for="description">Description</label>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                class="form-control"
-                placeholder="Description..."
-              />
-            </div>
-            <div class="form-group p-1">
-              <label class="mr-1" for="img">Image Url</label>
-              <input
-                type="url"
-                name="img"
-                id="img"
-                class="form-control"
-                placeholder="Image Url..."
-              />
-            </div>
-            <button type="submit" class="btn btn-outline-success">
-              Add Car
-            </button>
-          </form>
+      <section id="car-display" class="d-none">
+        <div class="row my-3">
+          <div class="col">
+            <form onsubmit="app.carsController.createCar()" class="form-inline">
+              <div class="form-group p-1">
+                <label class="mr-1" for="make">Make</label>
+                <input
+                  type="text"
+                  name="make"
+                  id="make"
+                  class="form-control"
+                  placeholder="Make..."
+                />
+              </div>
+              <div class="form-group p-1">
+                <label class="mr-1" for="model">Model</label>
+                <input
+                  type="text"
+                  name="model"
+                  id="model"
+                  class="form-control"
+                  placeholder="Model..."
+                />
+              </div>
+              <div class="form-group p-1">
+                <label class="mr-1" for="year">Year</label>
+                <input
+                  type="number"
+                  name="year"
+                  id="year"
+                  class="form-control"
+                  placeholder="Year..."
+                  min="1900"
+                  max="2021"
+                />
+              </div>
+              <div class="form-group p-1">
+                <label class="mr-1" for="price">Price</label>
+                <input
+                  type="number"
+                  name="price"
+                  id="price"
+                  class="form-control"
+                  placeholder="Price..."
+                />
+              </div>
+              <div class="form-group p-1">
+                <label class="mr-1" for="description">Description</label>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  class="form-control"
+                  placeholder="Description..."
+                />
+              </div>
+              <div class="form-group p-1">
+                <label class="mr-1" for="img">Image Url</label>
+                <input
+                  type="url"
+                  name="img"
+                  id="img"
+                  class="form-control"
+                  placeholder="Image Url..."
+                />
+              </div>
+              <button type="submit" class="btn btn-outline-success">
+                Add Car
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-      <div class="row" id="cars"></div>
-      <div class="row my-3">
-        <div class="col">
-          <form
-            onsubmit="app.housingController.addHousing()"
-            class="form-inline"
-          >
-            <div class="form-group p-1">
-              <label class="mr-1" for="rooms">Rooms</label>
-              <input
-                type="text"
-                name="rooms"
-                id="rooms"
-                class="form-control"
-                placeholder="Rooms"
-              />
-            </div>
-            <div class="form-group p-1">
-              <label class="mr-1" for="pricePerMonth">Price per Month</label>
-              <input
-                type="number"
-                name="pricePerMonth"
-                id="pricePerMonth"
-                class="form-control"
-                placeholder="Enter Price per Month"
-              />
-            </div>
-            <div class="form-group p-1">
-              <label class="mr-1" for="availability">When Available</label>
-              <input
-                type="date"
-                name="availability"
-                id="availability"
-                class="form-control"
-                placeholder="Enter Date"
-              />
-            </div>
-            <div class="form-group p-1">
-              <label class="mr-1" for="image">Image</label>
-              <input
-                type="url"
-                name="image"
-                id="image"
-                class="form-control"
-                placeholder="Enter image url..."
-              />
-            </div>
-            <div class="form-group p-1">
-              <label class="mr-1" for="description">Description</label>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                class="form-control"
-                placeholder="Description..."
-              />
-            </div>
+        <div class="row" id="cars"></div>
+      </section>
+      <section id="housing-display" class="d-none">
+        <div class="row my-3">
+          <div class="col">
+            <form
+              onsubmit="app.housingController.addHousing()"
+              class="form-inline"
+            >
+              <div class="form-group p-1">
+                <label class="mr-1" for="rooms">Rooms</label>
+                <input
+                  type="text"
+                  name="rooms"
+                  id="rooms"
+                  class="form-control"
+                  placeholder="Rooms"
+                />
+              </div>
+              <div class="form-group p-1">
+                <label class="mr-1" for="pricePerMonth">Price per Month</label>
+                <input
+                  type="number"
+                  name="pricePerMonth"
+                  id="pricePerMonth"
+                  class="form-control"
+                  placeholder="Enter Price per Month"
+                />
+              </div>
+              <div class="form-group p-1">
+                <label class="mr-1" for="availability">When Available</label>
+                <input
+                  type="date"
+                  name="availability"
+                  id="availability"
+                  class="form-control"
+                  placeholder="Enter Date"
+                />
+              </div>
+              <div class="form-group p-1">
+                <label class="mr-1" for="image">Image</label>
+                <input
+                  type="url"
+                  name="image"
+                  id="image"
+                  class="form-control"
+                  placeholder="Enter image url..."
+                />
+              </div>
+              <div class="form-group p-1">
+                <label class="mr-1" for="description">Description</label>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  class="form-control"
+                  placeholder="Description..."
+                />
+              </div>
 
-            <button type="submit" class="btn btn-outline-success">
-              Add Housing
-            </button>
-          </form>
+              <button type="submit" class="btn btn-outline-success">
+                Add Housing
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-      <div class="row" id="housing"></div>
+        <div class="row" id="housing"></div>
+      </section>
     </main>
     <footer class="container-fluid bg-primary">
       <div class="row">
